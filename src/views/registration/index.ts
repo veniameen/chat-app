@@ -46,6 +46,7 @@ const data = {
 const checks = {
   login: [
     Validator.CHECKS.REQUIRED,
+    Validator.CHECKS.LOGIN,
     Validator.CHECKS.ALPHANUMERIC,
     Validator.CHECKS.LENGTH(3, 20),
   ],
@@ -63,11 +64,13 @@ const checks = {
     Validator.CHECKS.EMAIL,
   ],
   first_name: [
+    Validator.CHECKS.FIRSTLETTER,
     Validator.CHECKS.REQUIRED,
     Validator.CHECKS.ALPHABETIC,
     Validator.CHECKS.LENGTH(3, 28),
   ],
   second_name: [
+    Validator.CHECKS.FIRSTLETTER,
     Validator.CHECKS.REQUIRED,
     Validator.CHECKS.ALPHABETIC,
     Validator.CHECKS.LENGTH(3, 28),
