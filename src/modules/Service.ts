@@ -71,7 +71,6 @@ export class HTTPTransport {
       if (method === METHODS.GET || !data) xhr.send(JSON.stringify({ status: 200 }));
       else {
         xhr.send(JSON.stringify(data));
-        // console.log(JSON.stringify(data));
       }
     });
   };

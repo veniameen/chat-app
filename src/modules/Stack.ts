@@ -12,9 +12,6 @@ type Node = {
     prev: Node,
 } | null;
 
-/**
- * Реализует структуру данных "Стек"
- */
 export default class Stack implements IStack {
   protected _size: number;
   protected _top: Node;

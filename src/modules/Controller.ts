@@ -42,7 +42,6 @@ export default class Controller {
   }
 
   public statusHandler( status: number, descriptions: ErrorsDescription = null ): boolean {
-    // Обрабатываются только коды ошибок
     if (status < 400) return false;
 
     let description = '';

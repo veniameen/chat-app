@@ -56,7 +56,6 @@ class ProfileDataController extends Controller {
   async changeProfileAvatar(data: FormData) {
     try {
       await usersAPI.changeAvatar(data);
-      // alert('Аватар обновлён');
     } catch (e) {
       this.statusHandler(e.status);
     }

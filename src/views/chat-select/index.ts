@@ -51,10 +51,6 @@ export class ChatSelectPage extends Component {
       return value === activeChatID;
     });
 
-    // Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
-    //   return (arg1 == arg2) ? options.fn() : options.inverse();
-    // });
-
     super(props, storeMap.chatPageProps);
     this.element.addEventListener('click', (e) => this.clickHandler(e));
   }
