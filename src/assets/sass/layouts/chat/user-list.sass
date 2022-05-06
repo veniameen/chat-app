@@ -1,6 +1,7 @@
 .user
   position: relative
   padding: 0.45vw 0
+  cursor: pointer
   &::before,
   &::after
     content: ""
@@ -21,10 +22,14 @@
   &__link
     padding: .6vw 0.8vw
     color: #fff
+    height: 5vw
     text-decoration: none
     user-select: none
     transition: background .25s ease
     &:hover
+      background: var(--gray-2)
+  &__active
+    & .user__link
       background: var(--gray-2)
   &__photo
     pointer-events: none
