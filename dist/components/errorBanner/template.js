@@ -1,0 +1,1 @@
+export var template = "\n    <h1 class=\"page-error__code\">{{type}}</h1>\n    <h2 class=\"page-error__heading\">{{description}}</h2>\n    <div class=\"page-error__backlink\">\n        <a class=\"link link-back\">\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F</a>\n    </div>\n";
