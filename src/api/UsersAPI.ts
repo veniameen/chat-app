@@ -19,19 +19,12 @@ export interface UserSearchData {
 }
 
 class UsersAPI extends API {
-  constructor() {
-    super();
-  }
-
   changeProfile(data: UserProfileData) {
     return this.put('/user/profile', { data });
   }
 
   changeAvatar(data: FormData) {
-    return this.put('/user/profile/avatar', {
-      data,
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
+    return this.put('/user/profile/avatar', { data });
   }
 
   changePassword(data: UserPasswordData) {

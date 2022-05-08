@@ -63,11 +63,5 @@ export const data = {
       title: 'Пароль',
       value: 'War123123;',
     },
-    // verify: {
-    //   name: 'verify_password',
-    //   type: 'password',
-    //   title: 'Пароль (ещё раз)',
-    //   value: 'War123123;',
-    // },
   },
 };

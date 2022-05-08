@@ -1,9 +1,16 @@
-export default function splitTimestamp(timestamp: string) {
+import isNumber from './isNumber';
+
+export default function splitTimestamp(tm: string) {
+  let timestamp: string | number = Date.parse(tm);
+  if (!isNumber(timestamp)) timestamp = new Date().toJSON();
+
+  timestamp = new Date(timestamp).toJSON();
+
   const datetime = timestamp.split('T');
   const date = datetime[0];
   const timeFull = datetime[1];
 
-  const hhmmss = timeFull.split('+')[0];
+  const hhmmss = timeFull.split('.')[0];
   const _partials = hhmmss.split(':');
 
   const hours = _partials[0];

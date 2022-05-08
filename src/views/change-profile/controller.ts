@@ -55,7 +55,8 @@ class ProfileDataController extends Controller {
 
   async changeProfileAvatar(data: FormData) {
     try {
-      await usersAPI.changeAvatar(data);
+      const response = await usersAPI.changeAvatar(data);
+      return response;
     } catch (e) {
       this.statusHandler(e.status);
     }
@@ -63,6 +64,10 @@ class ProfileDataController extends Controller {
 
   public async pageMountHandler() {
     this.updateUserInfo();
+  }
+
+  public updateAvatar(url: string) {
+    return `${SETTINGS.baseURL}/resources${url}`;
   }
 }
 

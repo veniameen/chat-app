@@ -21,6 +21,7 @@ class LoginController extends Controller {
     try {
       const response = await authAPI.getUserInfo();
       this.storeSet(storeMap.currentUserID, response.response['id']);
+      this.go(Routes.chatSelect);
       return response.response['id'];
     } catch (e) {
       return;

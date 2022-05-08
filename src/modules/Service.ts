@@ -5,7 +5,7 @@ export type Options = {
 };
 
 type RequestOptions = {
-  headers?: object;
+  headers?: Object;
   data?: any;
   method: string;
 };
@@ -66,10 +66,13 @@ export class HTTPTransport {
 
       const headersEntries = Object.entries(headers);
       if (headersEntries.length) headersEntries.forEach((header) => xhr.setRequestHeader(header[0], header[1]) );
-      else xhr.setRequestHeader('Content-Type', 'application/json');
 
-      if (method === METHODS.GET || !data) xhr.send(JSON.stringify({ status: 200 }));
-      else {
+      if (method === METHODS.GET || !data) {
+        xhr.send();
+      } else if (data instanceof FormData) {
+        xhr.send(data);
+      } else {
+        xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(data));
       }
     });

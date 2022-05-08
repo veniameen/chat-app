@@ -1,8 +1,8 @@
 import { template } from './template';
-import Button from '../../components/button/index';
+import Button from '../../components/Button/index';
 import Component from '../../modules/Component';
 import Validator from '../../modules/Validator';
-import { passwordValidationRules as checks, storeMap } from '../../config';
+import { passwordValidationRules as checks } from '../../config';
 import controller from './controller';
 
 const validator = new Validator(checks);
@@ -12,7 +12,7 @@ export class ProfilePasswordPage extends Component {
   constructor(props: any) {
     const button = new Button({ caption: 'Сохранить', type: 'submit' });
     if (button.element) Handlebars.registerPartial('button', button.element.innerHTML);
-    super(props, storeMap.profilePageProps);
+    super(props);
     this.element.addEventListener('click', (e) => this.clickHandler(e));
   }
 

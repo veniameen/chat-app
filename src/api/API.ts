@@ -4,10 +4,6 @@ import { SETTINGS } from '../config';
 const transport = new HTTPTransport(SETTINGS.baseURL);
 
 export class API {
-  constructor() {
-    return;
-  }
-
   protected transportErrorHandler = (e: Error) => {
     throw new Error(`${this.constructor.name}: Transport error (${e})`);
   };

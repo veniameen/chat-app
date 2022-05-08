@@ -1,5 +1,5 @@
 import { template } from './template';
-import Button from '../../components/button/index';
+import Button from '../../components/Button/index';
 import Validator from '../../modules/Validator';
 import Component from '../../modules/Component';
 import { profileValidationRules as checks, storeMap } from '../../config';
@@ -44,8 +44,9 @@ export class ProfileDataPage extends Component {
 
   clickHandler(event: Event) {
     const target = event.target as HTMLElement;
-    if (target.closest('.profile__backlink')) controller.back();
-    else if (target.closest('.profile__photo')) {
+    if (target.closest('.profile__backlink')) {
+      controller.back();
+    } else if (target.closest('.profile__photo')) {
       const modal = this.element.querySelector('.modal');
       if (modal) modal.classList.add('modal_active');
     } else if (target.classList.contains('modal')) target.classList.remove('modal_active');
@@ -53,13 +54,13 @@ export class ProfileDataPage extends Component {
     else if (target.classList.contains('field-file')) target.nextElementSibling.click();
   }
 
-  avatarFormHandler(event: Event) {
+  async avatarFormHandler(event: Event) {
     event.preventDefault();
     const target = event.target as HTMLFormElement;
-    let formData = new FormData(target);
-    controller.changeProfileAvatar(formData);
+    const formData = new FormData(target);
+    const response = await controller.changeProfileAvatar(formData);
     const modal = this.element.querySelector('.modal');
     if (modal) modal.classList.remove('modal_active');
-    controller.updateUserInfo();
+    (this.element.querySelector('.profile__photo__change img') as HTMLImageElement).src = controller.updateAvatar(response.response.avatar);
   }
 }

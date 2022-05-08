@@ -40,7 +40,7 @@ export const template =`
         </div>
     </div>
     <section class="modal">
-      <form class="form modal-form avatar-form">
+      <form class="form modal-form avatar-form" enctype="multipart/form-data">
         <h1 class="modal__header">Загрузите файл</h1>
         <div class="modal-form__field-container">
           <div class="modal-form__field">
