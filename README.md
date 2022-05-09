@@ -1,6 +1,3 @@
-## PR
-https://github.com/veniaminryadnov/middle.messenger.praktikum.yandex/pull/1
-
 # Yandex Praktikum Messager [![Netlify Status](https://api.netlify.com/api/v1/badges/bc7a10b0-99ea-41f6-8d3d-0dd425a231f3/deploy-status)](https://app.netlify.com/sites/festive-borg-967a59/deploys)
 
 ### Messenger web app using 
@@ -8,6 +5,10 @@ https://github.com/veniaminryadnov/middle.messenger.praktikum.yandex/pull/1
 * Express
 * Typescript
 * Sass
+* Mocha / Chai
+* ESLint / StyleLint
+* Netlify
+* Git
 
 ## Building and running
 ⚡ Installation
@@ -33,6 +34,11 @@ npm run eslint
 📗 Stylelint
 ```
 npm run stylelint
+```
+
+🐙 Auto-tests
+```
+npm run test
 ```
 
 ## Figma template

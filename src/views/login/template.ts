@@ -1,4 +1,4 @@
-export default `
+export const template =`
     <div class="content grid grid-column--reverse grid-middle">
         <div class="box">
             <div class="box__content">
@@ -17,10 +17,27 @@ export default `
                         {{> button}}
                     </div>
                     <div class="auth-form__callout">
-                        <a class="link" href="registration.html">Нет аккаунта?</a>
+                        <a class="link link-register">Нет аккаунта?</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 `;
+
+export const data = {
+  fields: {
+    login: {
+      name: 'login',
+      type: 'text',
+      title: 'Логин',
+      index: 1,
+    },
+    password: {
+      name: 'password',
+      type: 'password',
+      title: 'Пароль',
+      index: 2,
+    },
+  },
+};
