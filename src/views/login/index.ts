@@ -37,6 +37,6 @@ export class LoginPage extends Component {
 
   clickHandler(event: Event) {
     const target = event.target as HTMLElement;
-    if (target.classList.contains('register-link')) controller.go(Routes.signup);
+    if (target.classList.contains('link-register')) controller.go(Routes.signup);
   }
 }

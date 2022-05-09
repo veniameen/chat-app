@@ -7,7 +7,7 @@ export const template =`
                     <div class="auth-form__container">
                         {{#each fields}}
                             <div class="auth-form__field">
-                                <input class="auth-form__text-input" id={{name}} type={{type}} name={{name}} tabindex={{index}} autocorrect="off" autocapitalize="off" value="War123123;"required>
+                                <input class="auth-form__text-input" id={{name}} type={{type}} name={{name}} tabindex={{index}} autocorrect="off" autocapitalize="off" value=""required>
                                 <label class="auth-form__label" for={{name}}>{{title}}</label>
                                 <span class="field__error"></span>
                             </div>
