@@ -1,4 +1,4 @@
-import { API } from './API';
+import { API } from '@api/API';
 
 export interface UserProfileData {
   first_name: string;

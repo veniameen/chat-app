@@ -1,4 +1,4 @@
-import Component from './Component';
+import Component from "@modules/Component";
 
 export default class Route {
   private _pathname: string;

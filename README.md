@@ -7,8 +7,11 @@
 * Sass
 * Mocha / Chai
 * ESLint / StyleLint
-* Netlify
+* Webpack
+* Netlify / Heroku
 * Git
+* Husky
+* Docker
 
 ## Building and running
 ⚡ Installation
@@ -46,3 +49,6 @@ npm run test
 
 ## Netlify link
 https://festive-borg-967a59.netlify.app/
+
+## Heroku link
+https://chatyp.herokuapp.com
