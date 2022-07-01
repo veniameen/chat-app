@@ -1,0 +1,229 @@
+.chat
+  position: relative
+  width: 100%
+  height: 100%
+  overflow: hidden
+  &__users
+    flex: 1
+    display: flex
+    &__item
+      position: relative
+      width: 2.5vw
+      height: 2.5vw
+      margin-left: -1.4vw
+      border-radius: 50%
+      cursor: pointer
+      border: 2px solid var(--place)
+      z-index: 1
+      &:first-child
+        margin: 0
+      & img
+        width: 100%
+      & span
+        padding: .5vw 1vw
+        background: rgba(0, 0, 0, .5)
+        border-radius: 4px
+        position: absolute
+        white-space: nowrap
+        left: 50%
+        bottom: -.4vw
+        transform: translate(-50%, 100%)
+        transition: opacity .25s ease
+        opacity: 0
+        pointer-events: none
+      &:hover
+        z-index: 9
+        & span
+          opacity: 1
+  &-add-btn
+    padding: 1vw
+  &__sidebar
+    display: flex
+    flex-flow: column
+    width: 24.3%
+    border-right: 1px solid var(--place)
+  &__content
+    position: relative
+    flex: 1
+    padding: 0 1.6vw
+    &--hidden
+      display: none
+  &__default-message
+    position: absolute
+    top: 50%
+    left: 50%
+    font-size: .95vw
+    color: var(--light-gray)
+    transform: translate(-50%, -50%)
+  &__nav
+    padding: .8vw
+    text-align: right
+    &-link
+      padding: 0.8vw 0 0.8vw 0.6vw
+      display: inline-block
+      font-size: 0.95vw
+      text-decoration: none
+      color: var(--light-gray)
+      cursor: pointer
+      transition: opacity .25s ease
+      & svg
+        width: .6vw
+        height: .8vw
+        margin-bottom: -0.1vw
+      &:hover
+        opacity: .5
+    &-search
+      padding: 0.8vw 0 0.3vw
+  &__header
+    position: relative
+    padding: .6vw 0
+    border-bottom: 1px solid var(--place)
+    z-index: 9
+  &__user
+    &-list
+      flex: 1
+      overflow-y: auto
+    &-thumb
+      width: 2.65vw
+    &-name
+      flex: 1
+      padding: 0 .7vw
+      font-size: 1.07vw
+    &-option
+      padding: .81vw
+      cursor: pointer
+      border-radius: 50%
+      transition: background .25s ease
+      &-dropdown
+        position: absolute
+        bottom: 0
+        right: 0
+        transform: translate(.75vw, 110%)
+        opacity: 0
+        pointer-events: none
+        transition: opacity .25s ease
+        &-active
+          opacity: 1
+          pointer-events: all
+      & svg
+        pointer-events: none
+        width: 1.1vw
+        height: 1.1vw
+        & circle
+          transition: fill .25s ease
+      &:hover
+        background: var(--ground)
+        & svg circle
+          fill: var(--blue)
+  &__body
+    flex: 1
+    padding: 1vw 0
+    overflow-x: hidden
+  &__footer
+    position: relative
+    padding: 0.75vw 0
+    border-top: 1px solid var(--place)
+  &__media
+    background: transparent
+    border: 0
+    width: 2.6vw
+    height: 2.6vw
+    padding: 0.35vw
+    cursor: pointer
+    &-dropdown
+      position: absolute
+      top: 0
+      left: 0
+      transform: translate(-.75vw, -110%)
+      opacity: 0
+      pointer-events: none
+      transition: opacity .25s ease
+      &-active
+        opacity: 1
+        pointer-events: all
+    & svg
+      pointer-events: none
+      cursor: pointer
+      width: 1.9vw
+      height: 1.9vw
+    & svg path
+      transition: fill .25s ease
+    &:hover svg path
+      fill: var(--blue)
+  &__text
+    flex: 1
+    padding: 0 .7vw
+    &-input
+      width: 100%
+      height: 100%
+      background: var(--ground)
+      border: 0
+      color: #fff
+      border-radius: 10vw
+      padding: 0 1.4vw
+      font-size: 1vw
+      &::placeholder
+        user-select: none
+  &__send
+    position: relative
+    border-radius: 50%
+    width: 2.2vw
+    height: 2.2vw
+    border: 0
+    background: var(--blue)
+    transition: opacity .25s ease
+    cursor: pointer
+    & svg
+      position: absolute
+      width: 1.05vw
+      height: 1.05vw
+      top: 50%
+      left: 50%
+      transform: translate(-43%, -50%)
+      pointer-events: none
+      & *
+        transition: all .25s ease
+    &:hover
+      opacity: .5
+      & path
+        stroke: #fff
+      & rect
+        fill: #fff
+  &__message
+    position: relative
+    max-width: 45%
+    min-width: 13%
+    margin: .5%
+    padding: 1% 1.5% 2%
+    border-radius: 0 1.3vw 1.3vw
+    font-size: 1.07vw
+    & .timestamp
+      position: absolute
+      right: .4vw
+      bottom: .4vw
+      padding: 0.15vw 0.4vw
+      border-radius: 1vw
+      background: var(--ground)
+    &_type
+      &_text
+        background-color: var(--ground)
+      &_other
+        border-radius: 1.3vw
+        padding: 0
+        flex: none
+        background-color: var(--ground)
+        overflow: hidden
+        & img
+          display: block
+          width: 100%
+      &_other .timestamp
+        background-color: var(--dark-gray)
+    &_owner
+      align-self: flex-end
+      border-radius: 1.3vw 1.3vw 0
+    &_status_viewed .timestamp::before
+      content: url(../../assets/images/status-viewed.svg)
+
+@import "search-form.sass"
+@import "user-list.sass"
+@import "dropdown.sass"

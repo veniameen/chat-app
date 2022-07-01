@@ -1,0 +1,64 @@
+.user
+  position: relative
+  padding: 0.45vw 0
+  cursor: pointer
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    left: 50%
+    width: 93%
+    transform: translateX(-50%)
+    border-top: 1px solid var(--place)
+    display: none
+  &::before
+    top: 0
+  &::after
+    display: block
+    bottom: -1px
+  &:first-child
+    &::before
+      display: block
+  &__link
+    padding: .6vw 0.8vw
+    color: #fff
+    height: 5vw
+    text-decoration: none
+    user-select: none
+    transition: background .25s ease
+    &:hover
+      background: var(--dark-gray)
+  &__active
+    & .user__link
+      background: var(--dark-gray)
+  &__photo
+    pointer-events: none
+    width: 16%
+    &-img
+      width: 100%
+  &__content
+    pointer-events: none
+    padding: 0 .8vw
+    flex: 1
+  &__name
+    font-size: 1vw
+    font-weight: 500
+    padding-bottom: 0.3vw
+  &__info
+    pointer-events: none
+    text-align: right
+  &__message
+    font-size: .95vw
+    color: var(--light-gray)
+    &-time
+      font-size: .7vw
+      color: var(--light-gray)
+    &-count
+      font-size: .8vw
+      padding: .35vw 0
+      width: 1.5vw
+      height: 1.5vw
+      border-radius: 100%
+      background: var(--blue)
+      display: block
+      text-align: center

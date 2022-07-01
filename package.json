@@ -1,0 +1,84 @@
+{
+  "name": "messager",
+  "version": "1.0.0",
+  "description": "Yandex Praktikum sprint 1",
+  "scripts": {
+    "clear": "rm -rf dist/* .cache/*",
+    "start": "npm run build && node server.js",
+    "build": "npm run clear && parcel build src/**/app.sass --public-url ./ && npm run copy && tsc && node append-import-extensions.js",
+    "copy": "copyfiles -u 2 src/**/*.{svg,png} dist && copyfiles -u 1 src/index.html dist",
+    "deploy": "npm run build && pug netlify/pages/*.pug --out dist",
+    "eslint": "eslint src/**/**/*.ts",
+    "stylelint": "npx stylelint \"**/*.sass\"",
+    "test": "./node_modules/.bin/mocha"
+  },
+  "customDistStructure": {
+    "config": {
+      "js": [
+        ".js",
+        ".js.map"
+      ],
+      "css": [
+        ".css",
+        ".css.map"
+      ],
+      "images": [
+        ".jpg",
+        ".png",
+        ".svg"
+      ],
+      "fonts": [
+        ".ttf",
+        ".woff",
+        ".woff2"
+      ]
+    },
+    "options": {
+      "development": true
+    }
+  },
+  "keywords": [
+    "messager",
+    "chat",
+    "yadnex"
+  ],
+  "author": "Veniamin Ryadnov",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/register": "^7.17.7",
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.4.1",
+    "eslint-config-google": "^0.14.0",
+    "express": "^4.17.1",
+    "filehound": "^1.17.5",
+    "jsdom": "^19.0.0",
+    "mocha": "^10.0.0",
+    "parcel-bundler": "^1.3.1",
+    "parcel-plugin-custom-dist-structure": "^1.1.18",
+    "postcss-sass": "^0.5.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.43.4",
+    "stylelint-config-standard": "^24.0.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.3"
+  },
+  "engines" : { 
+    "npm" : ">=7.24.2",
+    "node" : ">=18.0.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  }
+}
