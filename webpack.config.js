@@ -28,21 +28,6 @@ const optimization = () => {
 
 const filename = ext => isDevMode ? `[name].${ext}` : `[name].bundle.[contenthash].${ext}`;
 
-const cssLoaders = extra => {
-    const loaders = [
-        {
-            loader: MiniCssExtractPlugin.loader,
-            options: {},
-        },
-        'css-loader'
-    ];
-
-    if (extra)
-        loaders.push(extra);
-
-    return loaders;
-}
-
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -97,11 +82,8 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                  // Creates `style` nodes from JS strings
                   "style-loader",
-                  // Translates CSS into CommonJS
                   "css-loader",
-                  // Compiles Sass to CSS
                   "sass-loader",
                 ],
               },
@@ -113,14 +95,6 @@ module.exports = {
                 test: /\.(svg|png|jpg|gif)$/,
                 use: ['file-loader?name=./images/[name].[ext]']
             },
-            // {
-            //     test: /\.js$/,
-            //     loader: 'babel-loader',
-            //     exclude: ['/node_modules/']
-            // }
-
-            // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
 };
