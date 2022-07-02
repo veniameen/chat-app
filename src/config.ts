@@ -1,4 +1,4 @@
-import Validator from './modules/Validator';
+import Validator from '@modules/Validator';
 
 export const SETTINGS = {
   baseURL: 'https://ya-praktikum.tech/api/v2',

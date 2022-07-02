@@ -11,7 +11,14 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@api/*": ["./src/api/*"],
+      "@components/*": ["./src/components/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@utils/*": ["./src/utilities/*"],
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["./src", "./node_modules/handlebars/types"]
 }

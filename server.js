@@ -9,6 +9,6 @@ app.get('*', (req, res) => {
   res.sendFile(`${__dirname}/dist/index.html`);
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ Express server running on port ${PORT}!`);
 });

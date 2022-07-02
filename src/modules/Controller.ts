@@ -1,8 +1,8 @@
-import Router from './Router';
-import { Routes } from '../index';
-import Store from './Store';
-import { storeMap, httpErrorCodes } from '../config';
-import { ErrorStatus } from '../components/errorBanner/types';
+import Router from "@modules/Router";
+import { Routes } from "@/index";
+import Store from "@modules/Store";
+import { storeMap, httpErrorCodes } from "@/config";
+import { ErrorStatus } from "@components/errorBanner/types";
 
 const router = new Router();
 const store = new Store();

@@ -1,5 +1,5 @@
-import { HTTPTransport, Options } from '../modules/Service';
-import { SETTINGS } from '../config';
+import { HTTPTransport, Options } from '@modules/Service';
+import { SETTINGS } from '@/config';
 
 const transport = new HTTPTransport(SETTINGS.baseURL);
 

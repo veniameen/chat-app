@@ -1,4 +1,4 @@
-import Router from './modules/Router';
+import Router from '@modules/Router';
 import { LoginPage } from './views/login/index';
 import { ChatSelectPage } from './views/chat-select/index';
 import { ErrorPage } from './views/error/index';
@@ -10,8 +10,9 @@ import { data as loginContext } from './views/login/template';
 import { data as signupContext } from './views/signup/template';
 import { data as profileDataContext } from './views/change-profile/template';
 import { data as profilePasswordContext } from './views/change-password/template';
-import Store from './modules/Store';
-import { storeMap } from './config';
+import Store from '@modules/Store';
+import { storeMap } from '@/config';
+import "./assets/sass/app.sass";
 
 const router = new Router('.app');
 

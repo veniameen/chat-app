@@ -1,4 +1,4 @@
-import { API } from './API';
+import { API } from '@api/API';
 
 export type QueryOptions = {
   offset?: number;

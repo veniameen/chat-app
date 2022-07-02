@@ -1,4 +1,4 @@
-import { API } from './API';
+import { API } from '@api/API';
 
 export interface RegisterFormData {
   first_name: string;
